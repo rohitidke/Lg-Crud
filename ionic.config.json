@@ -1,0 +1,8 @@
+{
+  "name": "Lg-Crud",
+  "app_id": "3fde65f2",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
