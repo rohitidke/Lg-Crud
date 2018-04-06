@@ -1,24 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { TableDataProvider } from './package.service';
-import { AlertController } from 'ionic-angular';
+import { Component, OnInit } from "@angular/core";
+import { AlertController } from "ionic-angular";
+import { TableDataProvider } from "./package.service";
 
-import * as _ from 'underscore';
+import * as _ from "underscore";
 
 @Component({
-  selector: 'package',
-  templateUrl: 'package.html'
+  selector: "package",
+  templateUrl: "package.html",
 })
 export class PackageComponent {
 
-  pager: any = {};
-  pagedItems: any[];
+  public pager: any = {};
+  public pagedItems: any[];
 
-  uid: any = 0;
-  elements: any;
-  headerFromService: any;
-  resultFromService: any;
-  rowSelected = [];
-  row = 0;
+  public uid: any = 0;
+  public elements: any;
+  public headerFromService: any;
+  public resultFromService: any;
+  public rowSelected = [];
+  public row = 0;
 
   constructor(private tableData: TableDataProvider, private alertCtrl: AlertController) {
     this.headerFromService = tableData.getHeaders();
@@ -27,10 +27,10 @@ export class PackageComponent {
     this.setPage(1);
   }
 
-  onDelete() {
-
-    for (let i = 0; i < this.rowSelected.length; i++) {
-      let temp = this.resultFromService.find(x => x.id == this.rowSelected[i]);
+  public onDelete() {
+    let i;
+    for (i = 0; i < this.rowSelected.length; i++) {
+      const temp = this.resultFromService.find((x) => x.id === this.rowSelected[i]);
       this.resultFromService.splice(this.resultFromService.indexOf(temp), 1);
     }
     this.rowSelected = [];
@@ -47,42 +47,38 @@ export class PackageComponent {
     this.row = this.rowSelected.length;
   }
 
-  deleteConfirm() {
-    if (this.row == 0) {
-      let alert = this.alertCtrl.create({
-        title: 'No row selected',
-        message: 'Please select atleast one row to delete.',
-        buttons: ['Dismiss']
+  public deleteConfirm() {
+    if (this.row === 0) {
+      const alert = this.alertCtrl.create({
+        buttons: ["Dismiss"],
+        message: "Please select atleast one row to delete.",
+        title: "No row selected",
       });
       alert.present();
     } else {
-      let alert = this.alertCtrl.create({
-        title: 'Confirm Delete',
-        message: 'Do you want to delete this row?',
+      const alert = this.alertCtrl.create({
         buttons: [
           {
-            text: 'Cancel',
-            role: 'cancel',
-            handler: () => {
-              console.log('Cancel clicked');
-            }
+            role: "cancel",
+            text: "Cancel",
           },
           {
-            text: 'Delete',
             handler: () => {
-              console.log('Delete clicked');
               this.onDelete();
-            }
-          }
-        ]
+            },
+            text: "Delete",
+          },
+        ],
+        message: "Do you want to delete this row?",
+        title: "Confirm Delete",
       });
       alert.present();
     }
   }
 
-  setPage(page: number) {
+  public setPage(page: number) {
     if (page < 1 || page > this.pager.totalPages) {
-        return;
+      return;
     }
 
     // get pager object from service
@@ -90,5 +86,5 @@ export class PackageComponent {
 
     // get current page of items
     this.pagedItems = this.resultFromService.slice(this.pager.startIndex, this.pager.endIndex + 1);
-}
+  }
 }
