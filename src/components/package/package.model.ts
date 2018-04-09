@@ -1,5 +1,12 @@
 /* tslint:disable:object-literal-sort-keys */
 export class TableData {
+  public displayPages = 5;
+  public middlePage = 3;
+  public startPage = 1;
+  public lastPages = 4;
+  public oneIndex = 1;
+  public sidePages = 2;
+  public pageSize = 10;
   public headers = [
     "Id",
     "Name",

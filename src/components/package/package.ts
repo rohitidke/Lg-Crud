@@ -2,8 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { AlertController } from "ionic-angular";
 import { PackageService } from "./package.service";
 
-import * as _ from "underscore";
-
 @Component({
   selector: "package",
   templateUrl: "package.html",
