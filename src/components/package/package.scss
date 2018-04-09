@@ -8,10 +8,10 @@ table {
 
 .titles {
     font-family: $font;  
-    padding: 15px;
+    padding: 16px;
     text-align: left;
     background-color: rgb(20, 140, 187);
-    color: white;
+    color: white;   
 }
 .content {
     font-family: $font;
@@ -23,8 +23,34 @@ table {
     padding: 5px;
 }
 
+.danger{
+    color: #fff;
+    background-color: #f53d3d;
+    border-radius: 2px;
+    overflow: hidden;
+    height: 3.6rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    margin: 0.4rem 0.2rem;
+    padding: 0 1.1em;
+}
+
 p{
     color: rgb(18, 104, 153);
     font-weight: bold;
     font-size: 15px;
+}
+
+.search-div{
+    padding: 7px;
+    background-color: rgb(224, 219, 201);
+}
+
+#search-box{
+    font-family: $font;
+    font-size: 15px;
+    padding: 6px 10px 6px 10px;
+    border: 1px solid gray;
 }

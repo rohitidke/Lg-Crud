@@ -32,8 +32,8 @@ export class PackageService {
     this.tData.removeSel();
   }
 
-  public selectAll(event) {
-    this.tData.selectAll(event);
+  public checkAll(ev) {
+    this.tData.checkAll(ev);
   }
 
 }

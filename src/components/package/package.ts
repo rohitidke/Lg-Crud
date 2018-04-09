@@ -17,15 +17,11 @@ export class PackageComponent {
   public resultFromService: any;
   public row: any = 0;
   public err: any;
-  public isAllSelected: any;
-  public checkAll: any = false;
 
   constructor(public serviceData: PackageService, public tData: TableData, public alertCtrl: AlertController) {
     this.headerFromService = serviceData.getHeaders();
     this.resultFromService = serviceData.getResult();
     this.elements = Object.keys(this.resultFromService[this.uid]);
-    this.isAllSelected = this.tData.isAllSelected;
-    this.checkAll = this.tData.checkAll;
   }
 
   public presentConfirm() {
@@ -51,20 +47,21 @@ export class PackageComponent {
   public checkedRow(event, id) {
     this.serviceData.checkedRow(event, id);
     this.row = this.tData.row;
-    this.checkAll = this.tData.checkAll;
-    this.isAllSelected = this.tData.isAllSelected;
+    // this.isAllSelected = this.tData.isAllSelected;
   }
 
   public removeSelect() {
     this.serviceData.removeSel();
     this.row = 0;
     this.err = this.tData.err;
-    this.checkAll = this.tData.checkAll;
   }
 
-  public selectAll(event) {
-    this.serviceData.selectAll(event);
-    this.isAllSelected = this.tData.isAllSelected;
-    this.row = this.tData.selectedRow.length;
+  public checkAll(ev) {
+    this.serviceData.checkAll(ev);
+    this.row = this.tData.row;
+  }
+
+  public isAllChecked() {
+    return this.resultFromService.every( (_) => _.state);
   }
 }

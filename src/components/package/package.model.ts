@@ -5,9 +5,7 @@ export class TableData {
   public i: any;
   public resultFromModel: any;
   public err: any;
-  public isAllSelected: any;
   public y: any;
-  public checkAll: any;
 
   public headers = [
     "Id",
@@ -108,11 +106,9 @@ export class TableData {
       if (event.target.checked) {
         this.selectedRow.push(id);
         this.row = this.selectedRow.length;
-        this.updateCheckAll();
       } else {
         this.selectedRow.splice(this.selectedRow.indexOf(id), 1);
         this.row = this.selectedRow.length;
-        this.updateCheckAll();
       }
     }
 
@@ -126,33 +122,24 @@ export class TableData {
         this.row = 0;
         if (this.resultFromModel.length === 0) {
           this.err = "No Data Available";
-          this.checkAll = false;
         } else {
           this.err = "";
         }
     }
 
-    public updateCheckAll() {
-      if (this.selectedRow.length === this.resultFromModel.length) {
-        this.checkAll = true;
-        this.isAllSelected = true;
-      } else {
-        this.checkAll = false;
-      }
+    public checkAll(ev) {
+      this.resultFromModel.forEach( (x) => x.state = ev.target.checked);
+      if (ev.target.checked) {
+      this.selectedRow = [];
+      this.resultFromModel.map((item) => {
+        return {
+            id: item.id,
+        };
+    }).forEach((item) => this.selectedRow.push(item));
+      this.row = this.selectedRow.length;
+    } else {
+      this.selectedRow = [];
+      this.row = this.selectedRow.length;
     }
-
-    public selectAll(event) {
-      if (event.target.checked) {
-        this.isAllSelected = true;
-        this.selectedRow = [];
-        this.resultFromModel.map((item) => {
-          return {
-              id: item.id,
-          };
-      }).forEach((item) => this.selectedRow.push(item));
-      } else {
-        this.isAllSelected = false;
-        this.selectedRow = [];
-      }
     }
 }

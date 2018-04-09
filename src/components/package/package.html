@@ -1,10 +1,13 @@
+<div class="search-div">
+  <input id="search-box" [(ngModel)]="searchTable" type="text" placeholder="Search.."/>
+</div>
 <table class="table table-hover">
     <tr>
-    <th class="titles" text-center><input type="checkbox" name="all" (change)="selectAll($event)" [checked]="checkAll" /></th>
+    <th class="titles" text-center><input type="checkbox" name="all" [checked]="isAllChecked()" (change)="checkAll($event)" /></th>
     <th class="titles" text-center *ngFor="let header of headerFromService">{{header}}</th>
   </tr>
   <tr *ngFor="let item of resultFromService; let i = index">
-    <td text-center class="content"><input type="checkbox" (change)="checkedRow($event,item.id)" [checked]="isAllSelected" /></td>
+    <td text-center class="content"><input type="checkbox" (change)="checkedRow($event,item.id)" value="item.id" [(ngModel)]="item.state" /></td>
     <td class="content" *ngFor="let element of elements" >{{item[element]}}</td>
   </tr>
   <tr text-center >
@@ -12,6 +15,6 @@
   </tr>
 </table>
 
-<button margin-top ion-button color="danger" (click)='presentConfirm()' ion-button [disabled]="row==0" >Delete</button>
+<button margin-top class="danger" (click)='presentConfirm()' [disabled]="row==0" >Delete</button>
 
 <p>Number Of Rows Selected : {{row}} </p>
