@@ -1,19 +1,13 @@
 <table>
   <tr>
-    <th class="titles" text-center>Select</th>
-    <th class="titles" text-center>ID</th>
     <th class="titles" *ngFor="let header of headerFromService" text-center>{{header}}</th>
   </tr>
-  <tr *ngFor="let item of pagedItems; let i = index">
-    <td class="content" text-center>
-      <input type="checkbox" (change)="selectedRow($event,item.id)">
-    </td>
+  <tr *ngFor="let item of pagedItems">
     <td class="content" *ngFor="let element of elements" text-center>{{item[element]}}</td>
   </tr>
 </table>
 <br>
-<button ion-button (click)='deleteConfirm()' [disabled]="row==0">Delete {{row}} rows</button>
-<br>
+
 <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
   <li>
       <a (click)="setPage(1)">First</a>
@@ -31,29 +25,3 @@
       <a (click)="setPage(pager.totalPages)">Last</a>
   </li>
 </ul>
-
-<!-- <div>
-      <div text-center>
-          
-          <div *ngFor="let item of pagedItems">{{item.id}}</div>
-
-      
-          <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
-              <li>
-                  <a (click)="setPage(1)">First</a>
-              </li>
-              <li>
-                  <a (click)="setPage(pager.currentPage - 1)">Previous</a>
-              </li>
-              <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-                  <a (click)="setPage(page)">{{page}}</a>
-              </li>
-              <li>
-                  <a (click)="setPage(pager.currentPage + 1)">Next</a>
-              </li>
-              <li>
-                  <a (click)="setPage(pager.totalPages)">Last</a>
-              </li>
-          </ul>
-      </div>
-</div> -->
