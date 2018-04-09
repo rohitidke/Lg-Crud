@@ -1,0 +1,30 @@
+$font: "Trebuchet MS", Arial, Helvetica, sans-serif;
+
+table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.titles {
+    font-family: $font;  
+    padding: 15px;
+    text-align: left;
+    background-color: rgb(20, 140, 187);
+    color: white;
+}
+.content {
+    font-family: $font;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.err{
+    padding: 5px;
+}
+
+p{
+    color: rgb(18, 104, 153);
+    font-weight: bold;
+    font-size: 15px;
+}
