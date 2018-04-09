@@ -1,10 +1,11 @@
 /* tslint:disable:object-literal-sort-keys */
 export class TableData {
   public headers = [
+    "Id",
     "Name",
-    "Mobile",
     "Email",
     "DoB",
+    "Mobile",
   ];
   public result =
     [

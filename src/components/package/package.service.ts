@@ -3,14 +3,9 @@ import { Injectable } from "@angular/core";
 import { TableData } from "./package.model";
 
 import * as _ from "underscore";
-/*
-  Generated class for the TableDataProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
-export class TableDataProvider {
+export class PackageService {
     public headers: any;
     public result: any;
     public model: any;
