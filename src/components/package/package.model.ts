@@ -1,720 +1,86 @@
-/* tslint:disable:object-literal-sort-keys */
-export class TableData {
-  public displayPages = 5;
-  public middlePage = 3;
-  public startPage = 1;
-  public lastPages = 4;
-  public oneIndex = 1;
-  public sidePages = 2;
-  public pageSize = 10;
-  public headers = [
-    "Id",
-    "Name",
-    "Email",
-    "DoB",
-    "Mobile",
-  ];
-  public result =
-    [
-      {
-        id: "1",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "2",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "3",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "4",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "5",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "6",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "7",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "8",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "9",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "10",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "11",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "12",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "13",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "14",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "15",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "16",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "17",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "18",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "19",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "20",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "21",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "22",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "23",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "24",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "25",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "26",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "27",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "28",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "29",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "30",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "31",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "32",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "33",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "34",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "35",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "36",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "37",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "38",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "39",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "40",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "41",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "42",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "43",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "44",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "45",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "46",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "47",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "48",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "49",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "50",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "51",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "52",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "53",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "54",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "55",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "56",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "57",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "58",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "59",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "60",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "61",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "62",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "63",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "64",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "65",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "66",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "67",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "68",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "69",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "70",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "71",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "72",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "73",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "74",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "75",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "76",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "77",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "78",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "79",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "80",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "81",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "82",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "83",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "84",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "85",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "86",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "87",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "88",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "89",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "90",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "91",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "92",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "93",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "94",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "95",
-        name: "Rohit",
-        email: "rtro@gmail.com",
-        dob: "19-2-2000",
-        mobile: "9422250832",
-      },
-      {
-        id: "96",
-        name: "Rahul",
-        email: "raja@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9423130832",
-      },
-      {
-        id: "97",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "98",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-      {
-        id: "99",
-        name: "Dheere",
-        email: "dheere@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9449412454",
-      },
-      {
-        id: "100",
-        name: "Tusss",
-        email: "tus@gmail.com",
-        dob: "22-2-2005",
-        mobile: "9454244246",
-      },
-    ];
+import { Injectable } from "@angular/core";
+import * as _ from "lodash";
+import { PackageService } from "./package.service";
+
+@Injectable()
+export class PackageModel {
+  public headers: any;
+  public results: any;
+  public pager: any = {};
+  public pagedItems: any[];
+  public uid: any = 0;
+  public elements: any;
+
+  constructor(private serviceData: PackageService) { }
+
+  public getHeaders() {
+    this.serviceData.getHeaders().subscribe((data) => {
+      this.headers = data;
+    });
+  }
+
+  public getResults() {
+    this.serviceData.getResults().subscribe((data) => {
+      this.results = data;
+      this.elements = Object.keys(this.results[this.uid]);
+      this.setPage(1);
+    });
+  }
+
+  public setPage(page: number) {
+    if (page < 1 || page > this.pager.totalPages) {
+      return;
+    }
+
+    // get pager object from service
+    this.pager = this.getPager(this.results.length, page);
+    // get current page of items
+    this.pagedItems = this.results.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  }
+
+  public getPager(
+    totalItems: number,
+    currentPage: number = this.serviceData.startPage,
+    pageSize: number = this.serviceData.pageSize,
+  ) {
+    // calculate total pages
+    const totalPages = Math.ceil(totalItems / pageSize);
+
+    let startPage: number;
+    let endPage: number;
+    if (totalPages <= this.serviceData.showPages) {
+      startPage = this.serviceData.startPage;
+      endPage = totalPages;
+    } else if (currentPage <= this.serviceData.middlePage) {
+      startPage = this.serviceData.startPage;
+      endPage = this.serviceData.showPages;
+    } else if (currentPage + this.serviceData.count >= totalPages) {
+      startPage = totalPages - this.serviceData.lastPages;
+      endPage = totalPages;
+    } else {
+      startPage = currentPage - this.serviceData.sidePages;
+      endPage = currentPage + this.serviceData.sidePages;
+    }
+
+    // calculate start and end item indexes
+    const startIndex = (currentPage - this.serviceData.count) * pageSize;
+    // tslint:disable-next-line:max-line-length
+    const endIndex = Math.min(startIndex + pageSize - this.serviceData.count, totalItems - this.serviceData.count);
+
+    // create an array of pages
+    const pages = _.range(startPage, endPage + this.serviceData.count);
+
+    return {
+      currentPage,
+      endIndex,
+      endPage,
+      pageSize,
+      pages,
+      startIndex,
+      startPage,
+      totalItems,
+      totalPages,
+    };
+  }
+
 }

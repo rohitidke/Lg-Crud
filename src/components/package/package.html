@@ -1,27 +1,27 @@
 <table>
-  <tr>
-    <th class="titles" *ngFor="let header of headerFromService" text-center>{{header}}</th>
-  </tr>
-  <tr *ngFor="let item of pagedItems">
-    <td class="content" *ngFor="let element of elements" text-center>{{item[element]}}</td>
-  </tr>
+    <tr>
+        <th class="titles" *ngFor="let header of packageModel.headers" text-center>{{header}}</th>
+    </tr>
+    <tr *ngFor="let item of packageModel.pagedItems">
+        <td class="content" *ngFor="let element of packageModel.elements" text-center>{{item[element]}}</td>
+    </tr>
 </table>
 <br>
 
-<ul *ngIf="pager.pages && pager.pages.length" class="pagination">
-  <li>
-      <a (click)="setPage(1)">First</a>
-  </li>
-  <li>
-      <a (click)="setPage(pager.currentPage - 1)">Previous</a>
-  </li>
-  <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-      <a (click)="setPage(page)">{{page}}</a>
-  </li>
-  <li>
-      <a (click)="setPage(pager.currentPage + 1)">Next</a>
-  </li>
-  <li>
-      <a (click)="setPage(pager.totalPages)">Last</a>
-  </li>
+<ul *ngIf="packageModel.pager.pages && packageModel.pager.pages.length" class="pagination">
+    <li>
+        <a (click)="packageModel.setPage(1)">First</a>
+    </li>
+    <li>
+        <a (click)="packageModel.setPage(packageModel.pager.currentPage - 1)">Previous</a>
+    </li>
+    <li *ngFor="let page of packageModel.pager.pages" [ngClass]="{active:packageModel.pager.currentPage === packageModel.page}">
+        <a (click)="packageModel.setPage(page)">{{page}}</a>
+    </li>
+    <li>
+        <a (click)="packageModel.setPage(packageModel.pager.currentPage + 1)">Next</a>
+    </li>
+    <li>
+        <a (click)="packageModel.setPage(packageModel.pager.totalPages)">Last</a>
+    </li>
 </ul>

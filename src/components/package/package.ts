@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { AlertController } from "ionic-angular";
-import { PackageService } from "./package.service";
+import { PackageModel } from "./package.model";
 
 @Component({
   selector: "package",
@@ -8,29 +7,13 @@ import { PackageService } from "./package.service";
 })
 export class PackageComponent {
 
-  public pager: any = {};
-  public pagedItems: any[];
-
-  public uid: any = 0;
-  public elements: any;
-  public headerFromService: any;
-  public resultFromService: any;
-
-  constructor(private serviceData: PackageService, private alertCtrl: AlertController) {
-    this.headerFromService = serviceData.getHeaders();
-    this.resultFromService = serviceData.getResult();
-    this.elements = Object.keys(this.resultFromService[this.uid]);
-    this.setPage(1);
+  constructor(public packageModel: PackageModel) {
+    this.getData();
   }
 
-  public setPage(page: number) {
-    if (page < 1 || page > this.pager.totalPages) {
-      return;
-    }
-
-    // get pager object from service
-    this.pager = this.serviceData.getPager(this.resultFromService.length, page);
-    // get current page of items
-    this.pagedItems = this.resultFromService.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  public getData() {
+    this.packageModel.getHeaders();
+    this.packageModel.getResults();
   }
+
 }
