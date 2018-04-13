@@ -3,10 +3,10 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";
 import { IonicApp, IonicErrorHandler, IonicModule } from "ionic-angular";
 
-import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { HttpModule } from "@angular/http";
 import { BrowserModule } from "@angular/platform-browser";
 import { PackageComponent } from "../components/package/package";
-import { TableData } from "../components/package/package.model";
+import { PackageModel } from "../components/package/package.model";
 import { PackageService } from "../components/package/package.service";
 import { HomePage } from "../pages/home/home";
 import { MyApp } from "./app.component";
@@ -26,15 +26,14 @@ import { MyApp } from "./app.component";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule,
+    HttpModule,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     PackageService,
-    HttpClient,
-    TableData,
+    PackageModel,
   ],
 })
-export class AppModule {}
+export class AppModule { }
