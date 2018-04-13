@@ -7,6 +7,7 @@ import { HttpModule } from "@angular/http";
 import { BrowserModule } from "@angular/platform-browser";
 import { PackageComponent } from "../components/package/package";
 import { PackageModel } from "../components/package/package.model";
+import { SearchtablePipe } from "../components/package/package.searchtable.pipe";
 import { PackageService } from "../components/package/package.service";
 import { HomePage } from "../pages/home/home";
 import { MyApp } from "./app.component";
@@ -17,6 +18,7 @@ import { MyApp } from "./app.component";
     MyApp,
     HomePage,
     PackageComponent,
+    SearchtablePipe,
   ],
   entryComponents: [
     MyApp,
