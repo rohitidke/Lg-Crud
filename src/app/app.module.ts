@@ -18,7 +18,6 @@ import { MyApp } from "./app.component";
     MyApp,
     HomePage,
     PackageComponent,
-    SearchtablePipe,
   ],
   entryComponents: [
     MyApp,
@@ -36,6 +35,8 @@ import { MyApp } from "./app.component";
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     PackageService,
     PackageModel,
+    SearchtablePipe,
+    PackageComponent,
   ],
 })
 export class AppModule { }

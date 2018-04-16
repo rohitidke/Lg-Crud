@@ -18,10 +18,14 @@ export class PackageComponent {
   public selectedRow = [];
   public i: any;
   public err: any;
-  public y: any;
+  public y = [] ;
+  public searchText: any;
+  public searchResult: any;
 
-  constructor(private alertCtrl: AlertController, public packageModel: PackageModel) {
+  // tslint:disable-next-line:max-line-length
+  constructor(private alertCtrl: AlertController, public packageModel: PackageModel, public searchtablePipe: SearchtablePipe) {
     this.getData();
+    this.searchResult = this.results;
   }
 
   public getData() {
@@ -30,6 +34,7 @@ export class PackageComponent {
     });
     this.packageModel.getResults().subscribe((data) => {
       this.results = data;
+      this.searchResult = this.results;
       this.elements = Object.keys(this.results[this.uid]);
       this.setPage(1);
     });
@@ -40,9 +45,9 @@ export class PackageComponent {
       return;
     }
     // get pager object from service
-    this.pager = this.packageModel.getPager(this.results.length, page);
+    this.pager = this.packageModel.getPager(this.searchResult.length, page);
     // get current page of items
-    this.pagedItems = this.results.slice(this.pager.startIndex, this.pager.endIndex + 1);
+    this.pagedItems = this.searchResult.slice(this.pager.startIndex, this.pager.endIndex + 1);
   }
 
   public presentConfirm() {
@@ -79,24 +84,25 @@ export class PackageComponent {
     for (this.i = 0; this.i < this.selectedRow.length; this.i++) {
       this.y = this.results.find((x) => x.id === this.selectedRow[this.i]);
       this.results.splice(this.results.indexOf(this.y), 1);
-
     }
     this.selectedRow = [];
+    this.searchResult = [];
     this.row = 0;
     if (this.results.length === 0) {
       this.err = "No Data Available";
     } else {
       this.err = "";
     }
-    this.pager = this.packageModel.getPager(this.results.length, this.pager.page);
-    this.pagedItems = this.results.slice(this.pager.startIndex, this.pager.endIndex + 1);
+    this.searchResult = this.results;
+    this.searchText = "";
+    this.setPage(this.pager.page);
   }
 
   public checkAll(ev) {
-    this.results.forEach((x) => x.state = ev.target.checked);
+    this.searchResult.forEach((x) => x.state = ev.target.checked);
     if (ev.target.checked) {
       this.selectedRow = [];
-      this.results.map((item) => {
+      this.searchResult.map((item) => {
         return {
           id: item.id,
         };
@@ -109,7 +115,23 @@ export class PackageComponent {
   }
 
   public isAllChecked() {
-    return this.results && this.results.every((_) => _.state);
+    return this.searchResult && this.searchResult.every((_) => _.state);
   }
 
+  public searchGo(searchText) {
+    if (searchText == null) {
+      this.setPage(1);
+    } else {
+      this.searchResult = this.searchtablePipe.transform(this.results, searchText);
+      if (this.searchResult.length === 0) {
+        this.err = "No Data Available";
+      } else {
+        this.err = "";
+      }
+      // get pager object from service
+      this.pager = this.packageModel.getPager(this.searchResult.length, this.pager.page);
+      // get current page of items
+      this.pagedItems = this.searchResult.slice(this.pager.startIndex, this.pager.endIndex + 1);
+    }
+  }
 }
