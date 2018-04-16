@@ -1,8 +1,7 @@
-import { NgModule } from '@angular/core';
-import { PackageComponent } from './package/package';
+import { NgModule } from "@angular/core";
+import { PackageComponent } from "./package/package";
 @NgModule({
-	declarations: [PackageComponent],
-	imports: [],
-	exports: [PackageComponent]
+declarations: [PackageComponent],
+exports: [PackageComponent],
 })
-export class ComponentsModule {}
+export class ComponentsModule { }
